@@ -1,0 +1,111 @@
+import { useCallback, useState } from 'react';
+
+const emptyRule = () => ({ name: '', description: '', range: '', modifiers: '' });
+
+export default function SpecialRulesEditor({ character, onChange }) {
+  const [newRule, setNewRule] = useState(emptyRule());
+
+  const addRule = useCallback(() => {
+    if (!newRule.name.trim()) return;
+    onChange({ ...character, specialRules: [...character.specialRules, { ...newRule }] });
+    setNewRule(emptyRule());
+  }, [newRule, character, onChange]);
+
+  const removeRule = useCallback(
+    (i) =>
+      onChange({
+        ...character,
+        specialRules: character.specialRules.filter((_, idx) => idx !== i),
+      }),
+    [character, onChange]
+  );
+
+  const editRule = useCallback(
+    (i, field, value) =>
+      onChange({
+        ...character,
+        specialRules: character.specialRules.map((r, idx) =>
+          idx === i ? { ...r, [field]: value } : r
+        ),
+      }),
+    [character, onChange]
+  );
+
+  const inputStyle = {
+    padding: '5px 8px',
+    borderRadius: '4px',
+    border: '1px solid #555',
+    backgroundColor: '#1e1e1e',
+    color: '#eee',
+    fontSize: '12px',
+    boxSizing: 'border-box',
+    width: '100%',
+  };
+
+  const btnStyle = (variant = 'normal') => ({
+    padding: '5px 10px',
+    borderRadius: '4px',
+    border: 'none',
+    cursor: 'pointer',
+    fontSize: '12px',
+    backgroundColor: variant === 'danger' ? '#5c2020' : variant === 'add' ? '#1a4a1a' : '#2a2a2a',
+    color: variant === 'danger' ? '#ff8888' : variant === 'add' ? '#88ff88' : '#ccc',
+  });
+
+  const ruleCardStyle = {
+    backgroundColor: '#1a1a1a',
+    border: '1px solid #444',
+    borderRadius: '6px',
+    padding: '10px',
+    marginBottom: '10px',
+  };
+
+  const fieldLabel = (text) => (
+    <div style={{ fontSize: '10px', color: '#777', marginBottom: '2px', marginTop: '6px' }}>{text}</div>
+  );
+
+  return (
+    <div>
+      <div style={{ fontSize: '12px', color: '#aaa', marginBottom: '10px', fontWeight: 'bold' }}>
+        Special Rules / Abilities
+      </div>
+
+      {character.specialRules.map((rule, i) => (
+        <div key={i} style={ruleCardStyle}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <span style={{ fontSize: '12px', color: '#ccc', fontWeight: 'bold' }}>{rule.name || '(unnamed)'}</span>
+            <button style={btnStyle('danger')} onClick={() => removeRule(i)}>✕ Remove</button>
+          </div>
+          {fieldLabel('Name')}
+          <input style={inputStyle} value={rule.name} onChange={(e) => editRule(i, 'name', e.target.value)} />
+          {fieldLabel('Range (optional)')}
+          <input style={inputStyle} value={rule.range || ''} onChange={(e) => editRule(i, 'range', e.target.value)} placeholder='e.g. 12"' />
+          {fieldLabel('Description')}
+          <textarea
+            style={{ ...inputStyle, resize: 'vertical', minHeight: '50px' }}
+            value={rule.description || rule.modifiers || ''}
+            onChange={(e) => editRule(i, 'description', e.target.value)}
+          />
+        </div>
+      ))}
+
+      <div style={{ ...ruleCardStyle, border: '1px dashed #556' }}>
+        <div style={{ fontSize: '11px', color: '#888', marginBottom: '8px' }}>Add New Rule</div>
+        {fieldLabel('Name *')}
+        <input style={inputStyle} value={newRule.name} onChange={(e) => setNewRule({ ...newRule, name: e.target.value })} placeholder="e.g. Kingly Presence" />
+        {fieldLabel('Range (optional)')}
+        <input style={inputStyle} value={newRule.range} onChange={(e) => setNewRule({ ...newRule, range: e.target.value })} placeholder='e.g. 12"' />
+        {fieldLabel('Description')}
+        <textarea
+          style={{ ...inputStyle, resize: 'vertical', minHeight: '50px' }}
+          value={newRule.description}
+          onChange={(e) => setNewRule({ ...newRule, description: e.target.value })}
+          placeholder="Effect description..."
+        />
+        <button style={{ ...btnStyle('add'), marginTop: '8px', width: '100%' }} onClick={addRule}>
+          + Add Special Rule
+        </button>
+      </div>
+    </div>
+  );
+}

@@ -1,0 +1,196 @@
+/* ===== Reset & Base ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #0d0d0d;
+  color: #eee;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== App Layout ===== */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== Header ===== */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #1a1020, #0d1020);
+  border-bottom: 2px solid #3a2a5a;
+  flex-wrap: wrap;
+  gap: 8px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-icon {
+  font-size: 24px;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #c9a84c;
+  letter-spacing: 1px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-secondary {
+  padding: 7px 14px;
+  border-radius: 5px;
+  border: 1px solid #444;
+  background-color: #1e1e2e;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.btn-secondary:hover {
+  background-color: #2a2a3e;
+  color: #ccc;
+}
+
+/* ===== Main ===== */
+.app-main {
+  display: flex;
+  flex: 1;
+  gap: 0;
+  align-items: flex-start;
+}
+
+/* ===== Editor Panel ===== */
+.editor-panel {
+  width: 340px;
+  min-width: 280px;
+  max-width: 380px;
+  border-right: 1px solid #2a2a2a;
+  background-color: #111;
+  overflow-y: auto;
+  height: calc(100vh - 57px);
+  position: sticky;
+  top: 57px;
+  flex-shrink: 0;
+}
+
+.panel-section {
+  padding: 16px;
+  border-bottom: 1px solid #222;
+}
+
+.panel-title {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #c9a84c;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+/* ===== Preview Panel ===== */
+.preview-panel {
+  flex: 1;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: radial-gradient(ellipse at center, #1a1510 0%, #0d0d0d 100%);
+  min-height: calc(100vh - 57px);
+}
+
+.preview-label {
+  align-self: flex-start;
+}
+
+.preview-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  background: repeating-conic-gradient(#181818 0% 25%, #141414 0% 50%) 0 0 / 20px 20px;
+  border-radius: 8px;
+  border: 1px solid #2a2a2a;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 8px;
+}
+
+.preview-hint {
+  font-size: 11px;
+  color: #555;
+  margin-top: 12px;
+  text-align: center;
+}
+
+/* ===== Footer ===== */
+.app-footer {
+  padding: 12px 24px;
+  border-top: 1px solid #2a2a2a;
+  background-color: #0d0d0d;
+  text-align: center;
+  font-size: 11px;
+  color: #444;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .app-main {
+    flex-direction: column;
+  }
+
+  .editor-panel {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    position: static;
+    border-right: none;
+    border-bottom: 1px solid #2a2a2a;
+  }
+
+  .preview-panel {
+    min-height: auto;
+    padding: 16px;
+  }
+
+  .preview-wrapper {
+    padding: 12px;
+  }
+
+  .app-header h1 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header {
+    padding: 10px 14px;
+  }
+
+  .panel-section {
+    padding: 12px;
+  }
+}
