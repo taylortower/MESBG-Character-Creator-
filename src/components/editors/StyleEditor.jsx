@@ -33,7 +33,7 @@ export default function StyleEditor({ character, onChange }) {
   const inputStyle = {
     marginLeft: '8px',
     borderRadius: '4px',
-    border: '1px solid #555',
+    border: '1px solid #c9a84c',
     cursor: 'pointer',
     height: '28px',
     width: '44px',
@@ -46,14 +46,14 @@ export default function StyleEditor({ character, onChange }) {
     alignItems: 'center',
     justifyContent: 'space-between',
     fontSize: '12px',
-    color: '#aaa',
+    color: '#5a3010',
     marginBottom: '8px',
   };
 
   return (
     <div>
       <div style={{ marginBottom: '16px' }}>
-        <div style={{ fontSize: '12px', color: '#aaa', marginBottom: '8px', fontWeight: 'bold' }}>
+        <div style={{ fontSize: '12px', color: '#5a3010', marginBottom: '8px', fontWeight: 'bold' }}>
           Presets
         </div>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
@@ -66,7 +66,7 @@ export default function StyleEditor({ character, onChange }) {
                 width: '32px',
                 height: '32px',
                 borderRadius: '50%',
-                border: '2px solid #666',
+                border: '2px solid #c9a84c',
                 backgroundColor: preset.preview,
                 cursor: 'pointer',
                 position: 'relative',
@@ -78,7 +78,7 @@ export default function StyleEditor({ character, onChange }) {
                 left: '50%',
                 transform: 'translateX(-50%)',
                 fontSize: '9px',
-                color: '#888',
+                color: '#5a3010',
                 whiteSpace: 'nowrap',
               }}>
                 {preset.name}
@@ -90,7 +90,7 @@ export default function StyleEditor({ character, onChange }) {
       </div>
 
       <div style={{ marginBottom: '16px' }}>
-        <div style={{ fontSize: '12px', color: '#aaa', marginBottom: '8px', fontWeight: 'bold' }}>
+        <div style={{ fontSize: '12px', color: '#5a3010', marginBottom: '8px', fontWeight: 'bold' }}>
           Font
         </div>
         <select
@@ -100,9 +100,9 @@ export default function StyleEditor({ character, onChange }) {
             width: '100%',
             padding: '6px 8px',
             borderRadius: '4px',
-            border: '1px solid #555',
-            backgroundColor: '#1e1e1e',
-            color: '#eee',
+            border: '1px solid #c9a84c',
+            backgroundColor: '#ffffff',
+            color: '#3b1e08',
             fontSize: '12px',
           }}
         >
@@ -115,7 +115,7 @@ export default function StyleEditor({ character, onChange }) {
       </div>
 
       <div>
-        <div style={{ fontSize: '12px', color: '#aaa', marginBottom: '8px', fontWeight: 'bold' }}>
+        <div style={{ fontSize: '12px', color: '#5a3010', marginBottom: '8px', fontWeight: 'bold' }}>
           Colours
         </div>
         {colourFields.map(({ key, label }) => (

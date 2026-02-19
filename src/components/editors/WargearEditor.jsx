@@ -24,9 +24,9 @@ function ListEditor({ items, onChange, placeholder = 'Add item...' }) {
     flex: 1,
     padding: '5px 8px',
     borderRadius: '4px',
-    border: '1px solid #555',
-    backgroundColor: '#1e1e1e',
-    color: '#eee',
+    border: '1px solid #c9a84c',
+    backgroundColor: '#ffffff',
+    color: '#3b1e08',
     fontSize: '12px',
   };
 
@@ -36,8 +36,8 @@ function ListEditor({ items, onChange, placeholder = 'Add item...' }) {
     border: 'none',
     cursor: 'pointer',
     fontSize: '12px',
-    backgroundColor: variant === 'danger' ? '#5c2020' : variant === 'add' ? '#1a4a1a' : '#2a2a2a',
-    color: variant === 'danger' ? '#ff8888' : variant === 'add' ? '#88ff88' : '#ccc',
+    backgroundColor: variant === 'danger' ? '#fce8e8' : variant === 'add' ? '#e8f4e8' : '#faf4ea',
+    color: variant === 'danger' ? '#8b1414' : variant === 'add' ? '#1a6a1a' : '#5a3010',
   });
 
   return (
@@ -74,7 +74,7 @@ export default function WargearEditor({ character, onChange }) {
   return (
     <div>
       <div style={{ marginBottom: '16px' }}>
-        <div style={{ fontSize: '12px', color: '#aaa', marginBottom: '6px', fontWeight: 'bold' }}>
+        <div style={{ fontSize: '12px', color: '#5a3010', marginBottom: '6px', fontWeight: 'bold' }}>
           Wargear / Equipment
         </div>
         <ListEditor
@@ -84,7 +84,7 @@ export default function WargearEditor({ character, onChange }) {
         />
       </div>
       <div>
-        <div style={{ fontSize: '12px', color: '#aaa', marginBottom: '6px', fontWeight: 'bold' }}>
+        <div style={{ fontSize: '12px', color: '#5a3010', marginBottom: '6px', fontWeight: 'bold' }}>
           Heroic Actions
         </div>
         <ListEditor

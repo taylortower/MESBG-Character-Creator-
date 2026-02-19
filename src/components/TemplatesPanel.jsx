@@ -25,9 +25,9 @@ export default function TemplatesPanel({ character, onLoad }) {
     flex: 1,
     padding: '5px 8px',
     borderRadius: '4px',
-    border: '1px solid #555',
-    backgroundColor: '#1e1e1e',
-    color: '#eee',
+    border: '1px solid #c9a84c',
+    backgroundColor: '#ffffff',
+    color: '#3b1e08',
     fontSize: '12px',
   };
 
@@ -44,9 +44,9 @@ export default function TemplatesPanel({ character, onLoad }) {
               width: '100%',
               padding: '8px',
               borderRadius: '4px',
-              border: '1px solid #555',
-              backgroundColor: '#1a3a1a',
-              color: '#88cc88',
+              border: '1px solid #c9a84c',
+              backgroundColor: '#e8f4e8',
+              color: '#1a5a1a',
               cursor: 'pointer',
               fontSize: '13px',
             }}
@@ -65,13 +65,13 @@ export default function TemplatesPanel({ character, onLoad }) {
               autoFocus
             />
             <button
-              style={{ padding: '5px 12px', borderRadius: '4px', border: 'none', backgroundColor: '#1a4a1a', color: '#88ff88', cursor: 'pointer' }}
+              style={{ padding: '5px 12px', borderRadius: '4px', border: 'none', backgroundColor: '#e8f4e8', color: '#1a5a1a', cursor: 'pointer' }}
               onClick={handleSave}
             >
               Save
             </button>
             <button
-              style={{ padding: '5px 8px', borderRadius: '4px', border: 'none', backgroundColor: '#2a2a2a', color: '#888', cursor: 'pointer' }}
+              style={{ padding: '5px 8px', borderRadius: '4px', border: 'none', backgroundColor: '#faf4ea', color: '#5a3010', cursor: 'pointer' }}
               onClick={() => setShowSave(false)}
             >
               ✕
@@ -81,7 +81,7 @@ export default function TemplatesPanel({ character, onLoad }) {
       </div>
 
       {templateList.length === 0 ? (
-        <p style={{ fontSize: '12px', color: '#666', textAlign: 'center', padding: '16px 0' }}>
+        <p style={{ fontSize: '12px', color: '#8b6914', textAlign: 'center', padding: '16px 0' }}>
           No saved templates yet.
         </p>
       ) : (
@@ -95,25 +95,25 @@ export default function TemplatesPanel({ character, onLoad }) {
                 gap: '6px',
                 padding: '8px',
                 borderRadius: '4px',
-                border: '1px solid #333',
-                backgroundColor: '#1a1a1a',
+                border: '1px solid #e8d8c0',
+                backgroundColor: '#faf8f5',
                 marginBottom: '6px',
               }}
             >
               <div style={{ flex: 1 }}>
-                <div style={{ fontSize: '13px', color: '#ccc', fontWeight: 'bold' }}>{t.name}</div>
-                <div style={{ fontSize: '10px', color: '#555' }}>
+                <div style={{ fontSize: '13px', color: '#3b1e08', fontWeight: 'bold' }}>{t.name}</div>
+                <div style={{ fontSize: '10px', color: '#8b6914' }}>
                   {new Date(t.savedAt).toLocaleDateString()}
                 </div>
               </div>
               <button
-                style={{ padding: '4px 10px', borderRadius: '4px', border: 'none', backgroundColor: '#1a3a4a', color: '#88aacc', cursor: 'pointer', fontSize: '11px' }}
+                style={{ padding: '4px 10px', borderRadius: '4px', border: 'none', backgroundColor: '#e8f0f8', color: '#1a3a6a', cursor: 'pointer', fontSize: '11px' }}
                 onClick={() => onLoad(t.character)}
               >
                 Load
               </button>
               <button
-                style={{ padding: '4px 8px', borderRadius: '4px', border: 'none', backgroundColor: '#3a1a1a', color: '#cc8888', cursor: 'pointer', fontSize: '11px' }}
+                style={{ padding: '4px 8px', borderRadius: '4px', border: 'none', backgroundColor: '#fce8e8', color: '#8b1414', cursor: 'pointer', fontSize: '11px' }}
                 onClick={() => handleDelete(t.id)}
               >
                 ✕

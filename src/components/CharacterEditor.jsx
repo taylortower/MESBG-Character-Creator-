@@ -23,7 +23,7 @@ export default function CharacterEditor({ character, onChange }) {
     flexWrap: 'wrap',
     gap: '2px',
     marginBottom: '16px',
-    borderBottom: '1px solid #444',
+    borderBottom: '1px solid #e8d8c0',
     paddingBottom: '8px',
   };
 
@@ -33,8 +33,8 @@ export default function CharacterEditor({ character, onChange }) {
     border: 'none',
     cursor: 'pointer',
     fontSize: '12px',
-    backgroundColor: isActive ? '#3a3a5c' : '#1e1e1e',
-    color: isActive ? '#aaaaff' : '#888',
+    backgroundColor: isActive ? '#f0e6d0' : '#faf4ea',
+    color: isActive ? '#3b1e08' : '#8b6914',
     fontWeight: isActive ? 'bold' : 'normal',
     transition: 'all 0.15s',
   });

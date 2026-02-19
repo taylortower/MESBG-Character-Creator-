@@ -12,9 +12,9 @@ export default function StatsEditor({ character, onChange }) {
     width: '100%',
     padding: '5px 6px',
     borderRadius: '4px',
-    border: '1px solid #555',
-    backgroundColor: '#1e1e1e',
-    color: '#eee',
+    border: '1px solid #c9a84c',
+    backgroundColor: '#ffffff',
+    color: '#3b1e08',
     fontSize: '13px',
     textAlign: 'center',
     boxSizing: 'border-box',
@@ -41,12 +41,12 @@ export default function StatsEditor({ character, onChange }) {
           {group.map((key) => (
             <label
               key={key}
-              style={{ display: 'block', fontSize: '11px', color: '#aaa', textAlign: 'center' }}
+              style={{ display: 'block', fontSize: '11px', color: '#5a3010', textAlign: 'center' }}
               title={statTooltips[key]}
             >
               {statLabels[key]}
               <br />
-              <span style={{ fontSize: '9px', color: '#666' }}>{statTooltips[key]}</span>
+              <span style={{ fontSize: '9px', color: '#8b6914' }}>{statTooltips[key]}</span>
               <input
                 style={inputStyle}
                 value={character.stats[key] ?? ''}
@@ -57,9 +57,9 @@ export default function StatsEditor({ character, onChange }) {
           ))}
         </div>
       ))}
-      <p style={{ fontSize: '11px', color: '#666', margin: '4px 0 0' }}>
-        Tip: Enter values like <code style={{ color: '#888' }}>6&quot;</code> for Move,{' '}
-        <code style={{ color: '#888' }}>5/4+</code> for Fight/Shoot.
+      <p style={{ fontSize: '11px', color: '#8b6914', margin: '4px 0 0' }}>
+        Tip: Enter values like <code style={{ color: '#6b4e1f' }}>6&quot;</code> for Move,{' '}
+        <code style={{ color: '#6b4e1f' }}>5/4+</code> for Fight/Shoot.
       </p>
     </div>
   );

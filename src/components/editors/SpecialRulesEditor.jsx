@@ -34,9 +34,9 @@ export default function SpecialRulesEditor({ character, onChange }) {
   const inputStyle = {
     padding: '5px 8px',
     borderRadius: '4px',
-    border: '1px solid #555',
-    backgroundColor: '#1e1e1e',
-    color: '#eee',
+    border: '1px solid #c9a84c',
+    backgroundColor: '#ffffff',
+    color: '#3b1e08',
     fontSize: '12px',
     boxSizing: 'border-box',
     width: '100%',
@@ -48,32 +48,32 @@ export default function SpecialRulesEditor({ character, onChange }) {
     border: 'none',
     cursor: 'pointer',
     fontSize: '12px',
-    backgroundColor: variant === 'danger' ? '#5c2020' : variant === 'add' ? '#1a4a1a' : '#2a2a2a',
-    color: variant === 'danger' ? '#ff8888' : variant === 'add' ? '#88ff88' : '#ccc',
+    backgroundColor: variant === 'danger' ? '#fce8e8' : variant === 'add' ? '#e8f4e8' : '#faf4ea',
+    color: variant === 'danger' ? '#8b1414' : variant === 'add' ? '#1a6a1a' : '#5a3010',
   });
 
   const ruleCardStyle = {
-    backgroundColor: '#1a1a1a',
-    border: '1px solid #444',
+    backgroundColor: '#faf8f5',
+    border: '1px solid #e8d8c0',
     borderRadius: '6px',
     padding: '10px',
     marginBottom: '10px',
   };
 
   const fieldLabel = (text) => (
-    <div style={{ fontSize: '10px', color: '#777', marginBottom: '2px', marginTop: '6px' }}>{text}</div>
+    <div style={{ fontSize: '10px', color: '#8b6914', marginBottom: '2px', marginTop: '6px' }}>{text}</div>
   );
 
   return (
     <div>
-      <div style={{ fontSize: '12px', color: '#aaa', marginBottom: '10px', fontWeight: 'bold' }}>
+      <div style={{ fontSize: '12px', color: '#5a3010', marginBottom: '10px', fontWeight: 'bold' }}>
         Special Rules / Abilities
       </div>
 
       {character.specialRules.map((rule, i) => (
         <div key={i} style={ruleCardStyle}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '12px', color: '#ccc', fontWeight: 'bold' }}>{rule.name || '(unnamed)'}</span>
+            <span style={{ fontSize: '12px', color: '#3b1e08', fontWeight: 'bold' }}>{rule.name || '(unnamed)'}</span>
             <button style={btnStyle('danger')} onClick={() => removeRule(i)}>✕ Remove</button>
           </div>
           {fieldLabel('Name')}
@@ -89,8 +89,8 @@ export default function SpecialRulesEditor({ character, onChange }) {
         </div>
       ))}
 
-      <div style={{ ...ruleCardStyle, border: '1px dashed #556' }}>
-        <div style={{ fontSize: '11px', color: '#888', marginBottom: '8px' }}>Add New Rule</div>
+      <div style={{ ...ruleCardStyle, border: '1px dashed #c9a84c' }}>
+        <div style={{ fontSize: '11px', color: '#8b6914', marginBottom: '8px' }}>Add New Rule</div>
         {fieldLabel('Name *')}
         <input style={inputStyle} value={newRule.name} onChange={(e) => setNewRule({ ...newRule, name: e.target.value })} placeholder="e.g. Kingly Presence" />
         {fieldLabel('Range (optional)')}

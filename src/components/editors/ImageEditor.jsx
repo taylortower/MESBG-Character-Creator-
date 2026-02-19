@@ -37,15 +37,15 @@ export default function ImageEditor({ character, onChange }) {
     width: '100%',
     padding: '5px 8px',
     borderRadius: '4px',
-    border: '1px solid #555',
-    backgroundColor: '#1e1e1e',
-    color: '#eee',
+    border: '1px solid #c9a84c',
+    backgroundColor: '#ffffff',
+    color: '#3b1e08',
     fontSize: '12px',
     boxSizing: 'border-box',
     marginTop: '3px',
   };
 
-  const labelStyle = { display: 'block', fontSize: '12px', color: '#aaa', marginBottom: '10px' };
+  const labelStyle = { display: 'block', fontSize: '12px', color: '#5a3010', marginBottom: '10px' };
 
   return (
     <div>
@@ -54,10 +54,10 @@ export default function ImageEditor({ character, onChange }) {
           style={{
             width: '100%',
             padding: '10px',
-            border: '2px dashed #555',
+            border: '2px dashed #c9a84c',
             borderRadius: '6px',
-            backgroundColor: '#1a1a1a',
-            color: '#aaa',
+            backgroundColor: '#faf4ea',
+            color: '#5a3010',
             cursor: 'pointer',
             fontSize: '13px',
           }}
@@ -80,7 +80,7 @@ export default function ImageEditor({ character, onChange }) {
             <img
               src={character.image}
               alt="Preview"
-              style={{ maxWidth: '100%', maxHeight: '120px', borderRadius: '4px', border: '1px solid #555' }}
+              style={{ maxWidth: '100%', maxHeight: '120px', borderRadius: '4px', border: '1px solid #c9a84c' }}
             />
           </div>
 
@@ -127,8 +127,8 @@ export default function ImageEditor({ character, onChange }) {
               padding: '8px',
               borderRadius: '4px',
               border: 'none',
-              backgroundColor: '#5c2020',
-              color: '#ff8888',
+              backgroundColor: '#fce8e8',
+              color: '#8b1414',
               cursor: 'pointer',
               fontSize: '12px',
             }}

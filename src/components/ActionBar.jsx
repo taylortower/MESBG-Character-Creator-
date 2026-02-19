@@ -38,7 +38,7 @@ export default function ActionBar({ cardRef, character }) {
     });
   }, [character]);
 
-  const btnStyle = (colour = '#2a2a2a', textColour = '#ccc') => ({
+  const btnStyle = (colour = '#faf4ea', textColour = '#5a3010') => ({
     padding: '8px 14px',
     borderRadius: '4px',
     border: 'none',
@@ -53,25 +53,25 @@ export default function ActionBar({ cardRef, character }) {
   return (
     <div>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '10px' }}>
-        <button style={btnStyle('#1a3a4a', '#88ccff')} onClick={handleExportPNG} disabled={exporting}>
+        <button style={btnStyle('#e8f0f8', '#1a3a6a')} onClick={handleExportPNG} disabled={exporting}>
           {exporting ? '⏳ Exporting...' : '🖼 Export PNG'}
         </button>
-        <button style={btnStyle('#1a2a3a', '#6699cc')} onClick={handleExportPDF} disabled={exporting}>
+        <button style={btnStyle('#e0e8f5', '#1a306a')} onClick={handleExportPDF} disabled={exporting}>
           {exporting ? '⏳ Exporting...' : '📄 Export PDF'}
         </button>
-        <button style={btnStyle('#2a1a3a', '#aa88cc')} onClick={handleShare}>
+        <button style={btnStyle('#f0e8f8', '#5a1a8b')} onClick={handleShare}>
           {copied ? '✅ Copied!' : '🔗 Share Link'}
         </button>
       </div>
       {shareUrl && (
         <div
           style={{
-            backgroundColor: '#1a1a2a',
-            border: '1px solid #444',
+            backgroundColor: '#faf8f5',
+            border: '1px solid #e8d8c0',
             borderRadius: '4px',
             padding: '8px',
             fontSize: '11px',
-            color: '#888',
+            color: '#5a3010',
             wordBreak: 'break-all',
           }}
         >
